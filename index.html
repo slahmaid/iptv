@@ -65,6 +65,33 @@
     </div>
   </main>
 
+  <section class="worldcup" aria-label="FIFA World Cup 2026">
+    <div class="worldcup-inner">
+      <img class="worldcup-logo" src="assets/images/World-cup-2026.svg" alt="FIFA World Cup 2026" />
+      <div class="worldcup-content">
+        <span class="worldcup-eyebrow">Live &amp; Exclusive</span>
+        <h2 class="worldcup-heading">Watch every World Cup 2026 match in 4K</h2>
+        <p class="worldcup-text">
+          All 104 games. Every goal, every nation, zero blackouts. Don't miss a
+          single moment of football's biggest tournament &mdash; streamed live in
+          crystal-clear 4K on every device.
+        </p>
+
+        <div class="worldcup-countdown">
+          <span class="countdown-label">Countdown to the Final</span>
+          <div class="countdown" id="wc-countdown">
+            <div class="countdown-unit"><span class="countdown-num" id="wc-days">00</span><span class="countdown-text">Days</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="wc-hours">00</span><span class="countdown-text">Hours</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="wc-mins">00</span><span class="countdown-text">Mins</span></div>
+            <div class="countdown-unit"><span class="countdown-num" id="wc-secs">00</span><span class="countdown-text">Secs</span></div>
+          </div>
+        </div>
+
+        <a class="worldcup-cta" href="checkout.html?plan=12">Get the full tournament</a>
+      </div>
+    </div>
+  </section>
+
   <section class="marquee" aria-label="Trusted by">
     <p class="marquee-title">Every premium network &mdash; included in one subscription</p>
     <div class="marquee-viewport">
@@ -428,6 +455,30 @@
         toggle.setAttribute("aria-expanded", "false");
       });
     });
+
+    const wcTarget = new Date("2026-07-19T18:00:00Z").getTime();
+    const wcEls = {
+      days: document.getElementById("wc-days"),
+      hours: document.getElementById("wc-hours"),
+      mins: document.getElementById("wc-mins"),
+      secs: document.getElementById("wc-secs"),
+    };
+    if (wcEls.days) {
+      const pad = (n) => String(n).padStart(2, "0");
+      const tick = () => {
+        let diff = Math.max(0, wcTarget - Date.now());
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        wcEls.days.textContent = pad(d);
+        wcEls.hours.textContent = pad(h);
+        wcEls.mins.textContent = pad(m);
+        wcEls.secs.textContent = pad(s);
+      };
+      tick();
+      setInterval(tick, 1000);
+    }
 
     document.querySelectorAll(".star-btn").forEach((btn) => {
       btn.addEventListener("click", () => {

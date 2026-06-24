@@ -300,6 +300,139 @@ img {
   opacity: 1;
 }
 
+/* World Cup promo */
+.worldcup {
+  padding: 20px 32px 60px;
+}
+
+.worldcup-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 48px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(161, 255, 20, 0.18), transparent 55%),
+    linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(20, 20, 20, 0.95));
+  border: 1px solid rgba(161, 255, 20, 0.3);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.worldcup-logo {
+  width: 220px;
+  height: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
+}
+
+.worldcup-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.worldcup-eyebrow {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgb(19, 19, 19);
+  background-color: rgb(161, 255, 20);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.worldcup-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.worldcup-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c2c2c2;
+  margin-bottom: 24px;
+}
+
+.worldcup-countdown {
+  margin-bottom: 28px;
+}
+
+.countdown-label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin-bottom: 12px;
+}
+
+.countdown {
+  display: flex;
+  gap: 12px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+  padding: 12px 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.countdown-num {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1;
+  color: rgb(161, 255, 20);
+}
+
+.countdown-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9a9a9a;
+  margin-top: 6px;
+}
+
+.worldcup-cta {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgb(19, 19, 19);
+  background-color: rgb(161, 255, 20);
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.worldcup-cta:hover {
+  background-color: rgb(192, 255, 20);
+}
+
+.worldcup-cta:active {
+  transform: scale(0.97);
+}
+
 /* Logo marquee */
 .marquee {
   max-width: none;
@@ -1199,6 +1332,25 @@ img {
     font-size: 44px;
   }
 
+  .worldcup-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+    padding: 36px 28px;
+  }
+
+  .worldcup-logo {
+    width: 160px;
+  }
+
+  .countdown {
+    justify-content: center;
+  }
+
+  .worldcup-heading {
+    font-size: 30px;
+  }
+
   .feature,
   .feature--reverse {
     flex-direction: column;
@@ -1301,6 +1453,28 @@ img {
 
   .hero-subheading {
     font-size: 16px;
+  }
+
+  .worldcup {
+    padding: 12px 16px 48px;
+  }
+
+  .worldcup-heading {
+    font-size: 25px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown-unit {
+    min-width: 0;
+    flex: 1;
+    padding: 10px 4px;
+  }
+
+  .countdown-num {
+    font-size: 24px;
   }
 
   .feature-heading {
