@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="css/checkout.css" />
 </head>
 <body>
+  <div class="preloader" id="preloader">
+    <div class="loader">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </div>
+  </div>
+
   <div class="container"></div>
 
   <header class="checkout-header">
@@ -153,6 +161,17 @@
   </div>
 
   <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      if (!preloader) return;
+      const MIN_DISPLAY = 2000;
+      const wait = Math.max(0, MIN_DISPLAY - performance.now());
+      setTimeout(() => {
+        preloader.classList.add("hidden");
+        setTimeout(() => preloader.remove(), 600);
+      }, wait);
+    });
+
     const PLANS = {
       "3": { name: "3 Months", price: 25, original: 30, perMo: "$8.33/mo" },
       "6": { name: "6 Months", price: 40, original: 50, perMo: "$6.67/mo" },
